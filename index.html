@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap Files -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Home / Twitter</title>
+  <!-- Twitter Icon -->
+  <link rel="icon" href="images/Twitter-logo.svg.webp">
+</head>
+
+<body>
+  <div class=" d-flex justify-content-center">
+    <!-- Creat Tweet Start -->
+    <div class="bla" id="creatTweet">
+      <div class="creat-tweet d-flex justify-content-center pt-5">
+        <div class="child px-3 py-2 d-flex flex-column justify-content-between">
+          <div class="close-icon mt-2">
+            <i class="fa-solid fa-xmark" title="close" onclick="tweetClose()"></i>
+          </div>
+          <div class="details-post d-flex h-75">
+            <div class="account-img me-3">
+              <img src="images/profile2.jpg" alt="img">
+            </div>
+            <div class="creeat-post">
+              <div>
+                <button class="the-offer px-2">
+                  Everyone
+                  <i class="fa-solid fa-caret-down"></i>
+                </button>
+              </div>
+              <div class="form-input mt-2">
+                <textarea id="post" rows="2" placeholder="What's happening ?" class="w-100"></textarea>
+              </div>
+              <div class="post-share position-relative mt-4">
+                <button class="share-with d-flex align-items-center" onclick="creat()">
+                  <i class="fa-solid fa-earth-americas me-1"></i>
+                  Everyone can reply
+                </button>
+                <div class="choices overflow-hidden" id="sharePeople">
+                  <div>
+                    <h6 class="d-flex flex-column ms-3 mt-3">
+                      Who can reply?
+                      <span class="mt-1">
+                        Choose who can reply to this Tweet.
+                        Anyone mentioned can always reply.
+                      </span>
+                    </h6>
+                  </div>
+                  <div class="choice py-2 px-3 mt-3 w-100 d-flex align-items-center" onclick="everyone()">
+                    <i class="fa-solid fa-earth-americas me-1 p-2 me-2"></i>
+                    <span>Everyone</span>
+                  </div>
+                  <div class="choice py-2 px-3 w-100 d-flex align-items-center" onclick="follow()">
+                    <i class="fa-solid fa-user-check me-1 p-2 me-2"></i>
+                    <span>People you follow</span>
+                  </div>
+                  <div class="choice py-2 px-3 w-100 d-flex align-items-center" onclick="mention()">
+                    <i class="fa-solid fa-users me-1 p-2 me-2"></i>
+                    <span>Only people you mention</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3 d-flex justify-content-between align-items-center">
+                <div class="post-icons d-flex justify-content-between align-items-center">
+                  <i class="fa-regular fa-image p-2" title="Media"></i>
+                  <i class="fa-solid fa-sliders p-2" title="Poll"></i>
+                  <i class="fa-regular fa-face-smile p-2" title="Emoji"></i>
+                  <i class="fa-solid fa-calendar-day p-2" title="Schedule"></i>
+                  <i class="fa-solid fa-location-dot p-2" title="Location"></i>
+                </div>
+                <div>
+                  <button class="new-tweet py-1 px-3">Tweet</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Creat Tweet End -->
+
+    <!-- Navbar Start -->
+    <nav
+      class="navbar px-2 col-xxl-3 col-xl-3 col-lg-2 col-md-2 col-sm-1 start-0 d-flex flex-column justify-content-between align-items-end">
+      <div class="links me-1">
+        <ul class="list-unstyled d-flex flex-column justify-content-between">
+          <li class="twitter">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </li>
+          <li class="m-1 ms-0 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-solid fa-house"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="search-icon m-1 ms-0 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search</span>
+            </a>
+          </li>
+          <li class="my-1 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-solid fa-hashtag"></i>
+              <span>Explore</span>
+            </a>
+          </li>
+          <li class="my-1 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-regular fa-bell"></i>
+              <span>Notification</span>
+            </a>
+          </li>
+          <li class="my-1 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-regular fa-envelope"></i>
+              <span>Messages</span>
+            </a>
+          </li>
+          <li class="my-1 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-regular fa-bookmark"></i>
+              <span>Bookmarks</span>
+            </a>
+          </li>
+          <li class="my-1 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-regular fa-rectangle-list"></i>
+              <span>Lists</span>
+            </a>
+          </li>
+          <li class="my-1 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-regular fa-user"></i>
+              <span class="my-1 me-3">Profile</span>
+            </a>
+          </li>
+          <li class="my-1 overflow-hidden">
+            <a href="#" class="text-decoration-none">
+              <i class="fa-solid fa-ellipsis"></i>
+              <span>more</span>
+            </a>
+          </li>
+        </ul>
+        <div class="tweet w-75 d-flex justify-content-center position-relative overflow-hidden">
+          <button class="w-100 py-2" onclick="tweet()">Tweet</button>
+        </div>
+        <div class="sparkles">
+          <i class="fa-solid fa-wand-sparkles"></i>
+        </div>
+      </div>
+      <div class="profile mb-1 position-relative" onclick="hideDetails()">
+        <div class=" details-profile w-100 p-2 w-100 h-100 d-flex justify-content-center align-items-center">
+          <div class="img">
+            <img src="images/profile2.jpg" alt="img">
+          </div>
+          <h6 class="flex-column justify-content-center align-items-center ms-3">
+            Ibrahim emad
+            <span class="d-block">
+              @Ibrahim_emad20
+            </span>
+          </h6>
+          <i class="fa-solid fa-ellipsis ms-auto"></i>
+          <div class="account pt-2 position-absolute" id="details">
+            <div class="d-flex justify-content-end mb-2 me-3">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="details-account py-2">
+              <a href="#" class="d-block text-decoration-none">Add an existing account</a>
+              <a href="#" class="d-block text-decoration-none">Log out @Ibrahim_emad20</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Main Section Start -->
+    <section class="main col-xl-5 col-lg-7 col-md-7 col-sm-9">
+      <div
+        class="title d-flex justify-content-between align-items-center px-3 py-2 col-xl-5 col-lg-7 col-md-7 col-sm-9">
+        <h6>Home</h6>
+        <i class="fa-solid fa-bahai p-2"></i>
+      </div>
+      <div class="home-tweet d-flex px-3">
+        <div class="home-profile me-2">
+          <img src="images/profile2.jpg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="tweetss position-relative">
+          <div>
+            <button class="the-offer px-2">
+              Everyone
+              <i class="fa-solid fa-caret-down"></i>
+            </button>
+          </div>
+          <div class="input-post mt-2">
+            <textarea id="post" rows="2" placeholder="What's happening ?" class="w-100"></textarea>
+            <button class="share-with d-flex align-items-center mb-1" onclick="creatTweet()">
+              <i class="fa-solid fa-earth-americas me-1"></i>
+              Everyone can reply
+            </button>
+          </div>
+          <!-- Start hide section -->
+          <div class="reply position-absolute" id="chocse">
+            <div>
+              <h6 class="d-flex flex-column mt-3 ms-3">
+                Who can reply?
+                <span class="mt-1">
+                  Choose who can reply to this Tweet.
+                  Anyone mentioned can always reply.
+                </span>
+              </h6>
+            </div>
+            <div class="determine py-2 px-3 mt-3 w-100 d-flex align-items-center" onclick="everyone()">
+              <i class="fa-solid fa-earth-americas me-1 p-2 me-2"></i>
+              <span>Everyone</span>
+            </div>
+            <div class="determine py-2 px-3 w-100 d-flex align-items-center" onclick="everyone()">
+              <i class="fa-solid fa-user-check me-1 p-2 me-2"></i>
+              <span>People you follow</span>
+            </div>
+            <div class="determine py-2 px-3 w-100 d-flex align-items-center" onclick="everyone()">
+              <i class="fa-solid fa-users me-1 p-2 me-2"></i>
+              <span>Only people you mention</span>
+            </div>
+          </div>
+          <!-- End hide section -->
+          <div class="my-2 d-flex justify-content-between align-items-center">
+            <div class="post-icons d-flex justify-content-between align-items-center">
+              <i class="fa-regular fa-image p-2" title="Media"></i>
+              <i class="fa-solid fa-sliders p-2" title="Poll"></i>
+              <i class="fa-regular fa-face-smile p-2" title="Emoji"></i>
+              <i class="fa-solid fa-calendar-day p-2" title="Schedule"></i>
+              <i class="fa-solid fa-location-dot p-2" title="Location"></i>
+            </div>
+            <div>
+              <button class="new-tweet py-1 px-3">Tweet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="first-post profiles d-flex justify-content-between px-3 py-2 w-100">
+        <div class="main-img me-2">
+          <img src="images/profile6.jpg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="details-persone">
+          <div class="img-name d-flex justify-content-between align-items-center mb-2">
+            <h6>
+              Elon Musk
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <span>@elonmusk . 10h</span>
+            </h6>
+            <i class="fa-solid fa-ellipsis p-2"></i>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat culpa,
+              voluptatum quam aliquam doloribus voluptatem harum ullam excepturi ut,
+              inventore blanditiis rem totam reprehenderit porro modi iure at. Est.
+            </p>
+          </div>
+          <div class="interaction d-flex justify-content-between align-items-center mt-1 w-100">
+            <div>
+              <i class="fa-regular fa-comment p-2"></i>
+              <span>544</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-retweet p-2"></i>
+              <span>909</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-heart p-2"></i>
+              <span>200</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-arrow-up-from-bracket p-2"></i>
+              <span>400</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profiles d-flex justify-content-between px-3 py-2 w-100">
+        <div class="main-img me-2">
+          <img src="images/profile2.jpg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="details-persone">
+          <div class="img-name d-flex justify-content-between align-items-center mb-2">
+            <h6>
+              Ibrahim Emad
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <span>@Ibrahim_emad . 17h</span>
+            </h6>
+            <i class="fa-solid fa-ellipsis p-2"></i>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat culpa,
+              voluptatum quam aliquam doloribus voluptatem harum ullam excepturi ut,
+              inventore blanditiis rem totam reprehenderit porro modi iure at. Est.
+            </p>
+          </div>
+          <div class="interaction d-flex justify-content-between align-items-center mt-1 w-100">
+            <div>
+              <i class="fa-regular fa-comment p-2"></i>
+              <span>664</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-retweet p-2"></i>
+              <span>313</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-heart p-2"></i>
+              <span>88</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-arrow-up-from-bracket p-2"></i>
+              <span>100</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profiles d-flex justify-content-between px-3 py-2 w-100">
+        <div class="main-img me-2">
+          <img src="images/profile3.jpg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="details-persone">
+          <div class="img-name d-flex justify-content-between align-items-center mb-2">
+            <h6>
+              Mohamed Salah
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <span>@MoSalah . Nov 2</span>
+            </h6>
+            <i class="fa-solid fa-ellipsis p-2"></i>
+          </div>
+          <div>
+            <img src="images/post-img1.jpg" alt="img" class="div-img w-100">
+          </div>
+          <div class="interaction d-flex justify-content-between align-items-center mt-1 w-100">
+            <div>
+              <i class="fa-regular fa-comment p-2"></i>
+              <span class="num">10,524</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-retweet p-2"></i>
+              <span class="num">1,327</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-heart p-2"></i>
+              <span class="num">120,340</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-arrow-up-from-bracket p-2"></i>
+              <span class="num">4,841</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profiles d-flex justify-content-between px-3 py-2 w-100">
+        <div class="main-img me-2">
+          <img src="images/profile7.jpg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="details-persone">
+          <div class="img-name d-flex justify-content-between align-items-center mb-2">
+            <h6>
+              Abdulrahman Alaa
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <span>@Abdulrahman_Alaa86 . Sep 15</span>
+            </h6>
+            <i class="fa-solid fa-ellipsis p-2"></i>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat culpa,
+              voluptatum quam aliquam doloribus voluptatem harum ullam excepturi ut,
+              inventore blanditiis rem totam reprehenderit porro modi iure at. Est.
+            </p>
+          </div>
+          <div class="interaction d-flex justify-content-between align-items-center mt-1 w-100">
+            <div>
+              <i class="fa-regular fa-comment p-2"></i>
+              <span>544</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-retweet p-2"></i>
+              <span>909</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-heart p-2"></i>
+              <span>200</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-arrow-up-from-bracket p-2"></i>
+              <span>400</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profiles d-flex justify-content-between px-3 py-2 w-100">
+        <div class="main-img me-2">
+          <img src="images/profile5.jpeg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="details-persone">
+          <div class="img-name d-flex justify-content-between align-items-center mb-2">
+            <h6>
+              Nagiub Sawiris
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <span>@NagiubSawiris . Dec 12</span>
+            </h6>
+            <i class="fa-solid fa-ellipsis p-2"></i>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque fugiat culpa,
+              voluptatum quam aliquam doloribus voluptatem harum ullam excepturi ut,
+              inventore blanditiis rem totam reprehenderit porro modi iure at. Est.
+            </p>
+          </div>
+          <div class="interaction d-flex justify-content-between align-items-center mt-1 w-100">
+            <div>
+              <i class="fa-regular fa-comment p-2"></i>
+              <span class="num">544</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-retweet p-2"></i>
+              <span class="num">909</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-heart p-2"></i>
+              <span class="num">200</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-arrow-up-from-bracket p-2"></i>
+              <span class="num">400</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profiles d-flex justify-content-between px-3 py-2 w-100">
+        <div class="main-img me-2">
+          <img src="images/profile4.jpg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="details-persone">
+          <div class="img-name d-flex justify-content-between align-items-center mb-2">
+            <h6>
+              Cristiano Ronaldo
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <span>@Cristiano . Dec 9</span>
+            </h6>
+            <i class="fa-solid fa-ellipsis p-2"></i>
+          </div>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Reprehenderit saepe optio magnam inventore fugit doloremque? Ea dicta ab optio. Quas non illum libero,
+              porro officia neque quibusdam pariatur nobis ea.
+            </p>
+            <img src="images/post-img2.jpg" alt="img" class="div-img w-100">
+          </div>
+          <div class="interaction d-flex justify-content-between align-items-center mt-1 w-100">
+            <div>
+              <i class="fa-regular fa-comment p-2"></i>
+              <span>544</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-retweet p-2"></i>
+              <span>909</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-heart p-2"></i>
+              <span>200</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-arrow-up-from-bracket p-2"></i>
+              <span>400</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profiles d-flex justify-content-between px-3 py-2 w-100">
+        <div class="main-img me-2">
+          <img src="images/profile8.jpg" alt="img" class="w-100 h-100">
+        </div>
+        <div class="details-persone">
+          <div class="img-name d-flex justify-content-between align-items-center mb-2">
+            <h6>
+              Leo Messi
+              <i class="fa-sharp fa-solid fa-circle-check"></i>
+              <span>@WeAreMessi . Dec 14</span>
+            </h6>
+            <i class="fa-solid fa-ellipsis p-2"></i>
+          </div>
+          <div>
+            <p>
+              Sunday it is!
+            </p>
+            <video controls autoplay src="images/vidieo1.mp4" alt="img" class="div-img w-100">
+          </div>
+          <div class="interaction d-flex justify-content-between align-items-center mt-1 w-100">
+            <div>
+              <i class="fa-regular fa-comment p-2"></i>
+              <span>544</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-retweet p-2"></i>
+              <span>909</span>
+            </div>
+            <div>
+              <i class="fa-regular fa-heart p-2"></i>
+              <span>200</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-arrow-up-from-bracket p-2"></i>
+              <span>400</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Main Section End -->
+
+    <!-- Right Section start -->
+    <section class="trends col-xl-3 col-lg-3 ps-4">
+      <div class="search-input mt-2 position-relative">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="search" placeholder="Search Twitter">
+      </div>
+      <div class="happening w-100 mt-5 pb-2 pt-2">
+        <h5 class="mx-3 mb-3">What’s happening</h5>
+        <div class="details-trend px-3 pb-1">
+          <p class="d-flex justify-content-between align-items-center">
+            Only on Twitter · Trending
+            <span>
+              <i class="fa-solid fa-ellipsis p-2"></i>
+            </span>
+          </p>
+          <h6>FIFA QATAR 2022</h6>
+          <p>41.3K Tweets</p>
+        </div>
+        <div class="details-trend px-3 pb-1">
+          <p class="d-flex justify-content-between align-items-center">
+            Trending in Egypt
+            <span>
+              <i class="fa-solid fa-ellipsis p-2"></i>
+            </span>
+          </p>
+          <h6 dir="rtl">عبدالرحمن علاء</h6>
+          <p>90.3K Tweets</p>
+        </div>
+        <div class="details-trend px-3 pb-1">
+          <p class="d-flex justify-content-between align-items-center">
+            Trending in Egypt
+            <span>
+              <i class="fa-solid fa-ellipsis p-2"></i>
+            </span>
+          </p>
+          <h6>Ibrahim_emad</h6>
+          <p>41.3K Tweets</p>
+        </div>
+        <div class="details-trend px-3 pb-1">
+          <p class="d-flex justify-content-between align-items-center">
+            Only on Twitter · Trending
+            <span>
+              <i class="fa-solid fa-ellipsis p-2"></i>
+            </span>
+          </p>
+          <h6 dir="rtl">الزيرو#</h6>
+          <p>41.3K Tweets</p>
+        </div>
+        <div class="d-none" id="show">
+          <div class="details-trend px-3 pb-1">
+            <p class="d-flex justify-content-between align-items-center">
+              Only on Twitter · Trending
+              <span>
+                <i class="fa-solid fa-ellipsis p-2"></i>
+              </span>
+            </p>
+            <h6 dir="rtl">الزيرو#</h6>
+            <p>41.3K Tweets</p>
+          </div>
+          <div class="details-trend px-3 pb-1">
+            <p class="d-flex justify-content-between align-items-center">
+              Only on Twitter · Trending
+              <span>
+                <i class="fa-solid fa-ellipsis p-2"></i>
+              </span>
+            </p>
+            <h6 dir="rtl">الزيرو#</h6>
+            <p>41.3K Tweets</p>
+          </div>
+        </div>
+        <div>
+          <button class="text-decoration-none m-3" onclick="showMore()">Show more</button>
+        </div>
+      </div>
+    </section>
+    <!-- Right Section End -->
+  </div>
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="w-100 d-flex justify-content-around align-items-center">
+      <i class="fa-solid fa-house"></i>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-regular fa-bell"></i>
+      <i class="fa-regular fa-envelope"></i>
+    </div>
+  </footer>
+  <div class="last-icon">
+    <i class="fa-solid fa-wand-sparkles"></i>
+  </div>
+  <!-- Footer Section End -->
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

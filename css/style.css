@@ -1,0 +1,711 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Merriweather+Sans:wght@300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@1,300&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+html {
+  font-size: 20px;
+}
+body {
+  background-color: black;
+  color: #fff;
+  position: relative;
+  min-height: 100vh;
+} 
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #22323f;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #2b6fa6c5;
+  border-radius: 50px;
+}
+
+/* creat tweet start */
+.bla {
+  display: none;
+  transition: 0.5s;
+}
+.creat-tweet {
+  position: absolute;
+  z-index: 200;
+  background-color: #9acae133;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+}
+.creat-tweet .child {
+  width: 40%;
+  height: 47%;
+  background-color: #000;
+  border-radius: 25px;
+}
+.creat-tweet .close-icon i {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.close-icon {
+  height: 12%;
+}
+.details-post {
+  height: calc(100% - 12%);
+}
+.creat-tweet .account-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.creat-tweet .account-img img {
+  width: 100%;
+  height: 100%;
+}
+.creat-tweet .child .creeat-post {
+  border-bottom: 1px solid rgba(43, 78, 104, 0.596);
+  width: calc(100% - 70px);
+  height: 80%;
+}
+.creeat-post .the-offer {
+  border: none;
+  outline: none;
+  background: none;
+  border: 2px solid #039be5;
+  border-radius: 30px;
+  color: #137bdc;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.creeat-post .form-input textarea {
+  background: none;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+}
+.creeat-post .post-share .share-with {
+  background: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(19, 123, 220);
+}
+.creeat-post .post-share .choices {
+  width: 300px;
+  height: 285px;
+  background-color: #000;
+  position: absolute;
+  transform: translateY(3%);
+  border-radius: 20px;
+  box-shadow: 1px 1px 7px 2px rgba(109, 109, 109, 0.675);
+  transition: display 0.5s ease-in-out;
+  display: none;
+}
+.creeat-post .post-share .choices h6 {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.creeat-post .post-share .choices span {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgb(141, 141, 141);
+}
+.creeat-post .choices .choice {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.creeat-post .choices .choice:hover {
+  background-color: rgb(42, 42, 42);
+}
+.creeat-post .choices .choice i {
+  border-radius: 50%;
+  background-color: rgb(3, 155, 229);
+  color: rgb(255, 255, 255);
+  font-size: 0.7rem;
+}
+.creeat-post .choices .choice span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.creeat-post .post-icons {
+  width: 45%;
+}
+.creeat-post .post-icons i {
+  font-size: 0.8rem;
+  color: rgb(63, 135, 171);
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+.creeat-post .post-icons i:hover {
+  background-color: rgba(47, 55, 68, 0.468);
+}
+.creeat-post .new-tweet {
+  border: none;
+  outline: none;
+  background-color: #039be5;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+/* creat tweet end */
+
+/* navbar start */
+.navbar {
+  position: fixed;
+  z-index: 50;
+  border-right: 1px solid rgba(55, 69, 92, 0.468);
+  height: 100vh;
+}
+.links {
+  width: 70%;
+  min-height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.links .twitter {
+  width: 65px;
+  height: 65px;
+  padding: 0;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.links .twitter:hover {
+  background-color: rgba(47, 55, 68, 0.468);
+}
+.links .fa-twitter {
+  font-size: 1.5rem;
+  width: 100%;
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+}
+.links li {
+  border-radius: 90px;
+  transition: 0.3s;
+  width: fit-content;
+}
+.links li:hover {
+  background-color: rgb(42, 42, 42);
+}
+.links li i {
+  width: 38px;
+  font-size: 1.1rem;
+}
+.links li a {
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 15px;
+}
+.links li a:focus :not(.fa-twitter) {
+  background-color: rgb(42, 42, 42);
+}
+.links .search-icon {
+  display: none;
+}
+.links .tweet {
+  border-radius: 100px;
+}
+.links .tweet button {
+  border: 3px solid rgb(3, 155, 229);
+  outline: none;
+  border-radius: 100px;
+  color: #039be5;
+  background: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.links .tweet button::before {
+  content: "";
+  position: absolute;
+  z-index: -5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(3, 154, 229, 0.886);
+  transform: scalex(0);
+  transition: transform 300ms ease-in-out;
+}
+.links .tweet button:hover::before,
+.links .tweet button:focus {
+  transform: scalex(1);
+  background-color: #039be5;
+}
+.links .tweet button:hover,
+.links .tweet button:focus {
+  color: #fff;
+}
+.links .sparkles {
+  position: absolute;
+  bottom: 20%;
+  right: 28%;
+  border: 1px solid blue;
+  padding: 13px 17px;
+  border-radius: 50%;
+  background-color: rgb(3, 155, 229);
+  display: none;
+}
+.links .sparkles i {
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.profile {
+  border-radius: 100px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.profile {
+  border: 2px solid rgba(47, 47, 47, 0.9);
+  background: none;
+}
+.profile .img {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile .img img {
+  width: 100%;
+  height: 100%;
+}
+.profile h6 {
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+.profile h6 span {
+  font-size: 0.5rem;
+  font-weight: 300;
+  color: rgba(187, 187, 187, 0.873);
+}
+.profile .fa-ellipsis {
+  font-size: 1.1rem;
+  border-radius: 50%;
+  transition: 0.3s;
+  padding: 13px;
+}
+.profile .fa-ellipsis:hover {
+  background-color: rgba(29, 29, 29, 0.9);
+}
+.profile .account {
+  z-index: 70;
+  background-color: #000;
+  box-shadow: 1px 1px 7px 2px rgba(109, 109, 109, 0.675);
+  border-radius: 15px;
+  width: 290px;
+  transform: translateY(-90%);
+  display: none;
+  transition: all 0.5 ease-in-out;
+}
+.profile .account .details-account {
+  border-top: 1px solid rgba(82, 82, 82, 0.714);
+}
+.profile .account .details-account a {
+  font-size: 0.8rem;
+  color: #fff;
+  padding: 10px;
+}
+.profile .account .details-account a:hover {
+  background-color: rgba(29, 29, 29, 0.9);
+}
+/* end navbar */
+
+/* main section start */
+.main {
+  border-right: 1px solid rgba(55, 69, 92, 0.468);
+  margin-left: 17%;
+}
+.main .title {
+  position: fixed;
+  z-index: 170;
+  background-color: rgba(10, 10, 10, 0.808);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+}
+.main .title h6 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.main .title i {
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.main .title i:hover{
+  background-color: rgba(47, 55, 68, 0.468);
+}
+.main .home-tweet {
+  margin-top: 70px;
+  border-bottom: 3px solid rgba(55, 69, 92, 0.468);
+}
+.main .home-tweet .home-profile {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main .home-tweet .tweetss {
+  width: calc(100% - 65px);
+}
+.main .home-tweet .tweetss .the-offer {
+  border: none;
+  outline: none;
+  background: none;
+  border: 2px solid #039be5;
+  border-radius: 30px;
+  color: #137bdc;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.main .home-tweet .tweetss .input-post textarea {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+.main .tweetss .input-post {
+  border-bottom: 1px solid rgba(55, 69, 92, 0.468);
+}
+.main .tweetss .input-post .share-with {
+  background: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #137bdc;
+  border: none;
+  outline: none;
+}
+.main .tweetss .reply {
+  width: 300px;
+  height: 285px;
+  background-color: #000;
+  position: absolute;
+  transform: translateY(3%);
+  border-radius: 20px;
+  box-shadow: 1px 1px 7px 2px rgba(109, 109, 109, 0.675);
+  transition: display 0.5s ease-in-out;
+  display: none;
+}
+.main .tweetss .reply h6 {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.main .tweetss .reply span {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgb(141, 141, 141);
+}
+.main .tweetss .reply .determine {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.main .tweetss .reply .determine:hover {
+  background-color: rgb(42, 42, 42);
+}
+.main .tweetss .reply .determine i {
+  border-radius: 50%;
+  background-color: #039be5;
+  color: #fff;
+  font-size: 0.7rem;
+}
+.main .tweetss .reply .determine span {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.main .tweetss .post-icons {
+  width: 45%;
+}
+.main .tweetss .post-icons i {
+  font-size: 0.8rem;
+  color: #3f87ab;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+.main .tweetss .post-icons i:hover {
+  background-color: rgba(47, 55, 68, 0.468);
+}
+.main .tweetss .new-tweet {
+  border: none;
+  outline: none;
+  background-color: #039be5;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+.main .profiles {
+  border-bottom: 1px solid rgba(50, 65, 91, 0.753);
+}
+.main .profiles .main-img {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.main .profiles .details-persone {
+  width: calc(100% - 65px); 
+}
+.main .profiles .details-persone .img-name h6 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.main .profiles .details-persone .img-name h6 i {
+  color: #0ba5f2;
+}
+.main .profiles .img-name h6 span {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: rgb(136, 136, 136);
+  margin-left: 5px;
+}
+.main .profiles .details-persone i {
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.main .profiles .details-persone i:hover {
+  background-color: #1d242bc8;
+}
+.main .details-persone .interaction {
+  cursor: pointer;
+}
+.main .details-persone .interaction i,
+.main .details-persone .interaction span {
+  font-size: 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  color: rgb(91, 91, 91);
+}
+.main .details-persone p {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.main .profiles .div-img {
+  border-radius: 15px;
+  cursor: pointer;
+}
+.main .details-persone .interaction .fa-comment:hover {
+  background-color: #0e659141;
+  color: #0361e5;
+}
+.main .details-persone .interaction .fa-retweet:hover {
+  background-color: #0e911741;
+  color: #07b001dd;
+}
+.main .details-persone .interaction .fa-heart:hover {
+  background-color: #910e3541;
+  color: #e50303d8;
+}
+.main .details-persone .interaction .fa-arrow-up-from-bracket:hover {
+  background-color: #0e659141;
+  color: #0361e5;
+}
+/* main section end */
+
+/* trends section start */
+.trends .search-input input {
+  width: 100%;
+  padding: 10px 10px 10px 55px;
+  background: none;
+  background-color: #22323f;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  color: #d1ddeb;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.trends .search-input i {
+  position: absolute;
+  z-index: 400;
+  left: 5%;
+  transform: translateY(55%);
+  cursor: pointer;
+  color: #50636f;
+  padding-right: 10px;
+  border-right: 1px solid #50636f;
+}
+.trends .happening {
+  background-color: #3f43476c;
+  border-radius: 10px;
+}
+.trends .happening h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.trends .happening .details-trend p {
+  font-size: 0.6rem;
+  color: rgb(132, 132, 132);
+  margin-bottom: 5px;
+}
+.trends .happening .details-trend h6 {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.trends .happening .details-trend {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.trends .happening .details-trend:hover {
+  background-color: #262a2dbb;
+}
+.trends .happening button {
+  font-size: 0.7rem;
+  font-weight: 400;
+  background: none;
+  border: none;
+  outline: none;
+  color: #0361e5;
+}
+/* trends section end */
+
+/* footer section start */
+footer {
+  position: fixed;
+  z-index: 800;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #000;
+  display: none;
+}
+footer div i {
+  font-size: 1.4rem;
+}
+.last-icon {
+  position: fixed;
+  z-index: 900;
+  bottom: 10%;
+  right: 3%;
+  padding: 13px 17px;
+  border-radius: 50%;
+  background-color: #039be5;
+  display: none;
+}
+/* footer section end */
+
+/* Responsiv Main Section */
+@media only screen and (max-width: 1200px) {
+  .profile .account {
+    width: 240px;
+  }
+  .profile .account .details-account a {
+    font-size: 0.6rem;
+  }
+
+  .navbar .links li span {
+    display: none;
+  }
+  .navbar .links ul {
+    transform: translateX(-10%);
+  }
+  .navbar .links li i {
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+  .navbar .tweet {
+    display: none !important;
+  }
+  .navbar .links .sparkles {
+    display: block;
+  }
+  .profile .details-profile h6,
+  .profile .details-profile .fa-ellipsis {
+    display: none;
+  }
+  .profile {
+    width: fit-content;
+    border: none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 1105px) {
+  .trends {
+    display: none;
+  }
+  .links .search-icon {
+    display: block;
+  }
+  .navbar{
+    width: 17%;
+    margin-left: 5.3%;
+  }
+  .main {
+    margin-left: 3%;
+  }
+  .profile .account {
+    left: 20%;
+  }
+} 
+
+@media only screen and (max-width: 768px) {
+  .navbar{
+    width: 17%;
+    margin-left: 0%;
+  }
+  .main {
+    margin-left: 9%;
+  }
+} 
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+  .navbar {
+    display: none !important;
+  }
+  .main {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .main .title {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  .main .profiles .img-name h6 span {
+    font-weight: 500;
+  }
+  .main .details-persone .interaction span {
+    font-weight: 600;
+  }
+  .main .details-persone .interaction i {
+    font-size: 0.9rem;
+  }
+  .home-tweet {
+    display: none !important;
+  }
+  .main .first-post {
+    margin-top: 50px;
+  }
+  footer {
+    display: block !important;
+  }
+  .last-icon {
+    display: block !important;
+  }
+}
